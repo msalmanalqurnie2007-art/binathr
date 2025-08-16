@@ -63,9 +63,9 @@ jobs:
         with:
           merge-multiple: true
 
-      - name: Download Spotify IPA from Telegram link
+      - name: Download Spotify IPA from given link
         run: |
-          wget "${{ github.event.inputs.LINK_IPA }}" -O spotify.ipa
+          curl -L "${{ github.event.inputs.LINK_IPA }}" -o spotify.ipa
 
       - name: Setup tools
         run: |
